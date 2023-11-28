@@ -31,6 +31,12 @@ class Voiture {
 
     // Méthodes
     public void accelerer() {
+        for (Roue roue : this.listeRoues) {
+            if(roue.getPression() < 2){
+                System.out.println("L'une des roues de la voiture présente une pression trop basse !")
+                return;
+            }
+        }
         if(this.listeRoue.size() == 4){
             if(this.demarrer){
                 vitesse += 10;
